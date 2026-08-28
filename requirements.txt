@@ -1,0 +1,7 @@
+pyrogram==2.0.106
+py-tgcalls[pyrogram]==2.2.5
+TgCrypto==1.2.5
+yt-dlp>=2025.1.15
+aiohttp>=3.9.0
+gTTS>=2.5.0
+Pillow>=10.0.0

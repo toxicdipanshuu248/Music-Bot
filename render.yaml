@@ -1,0 +1,29 @@
+# 𝐃𝐄𝐗 𝐗 𝐂𝐎𝐑𝐄 v6 — Render.com blueprint
+# Render Dashboard -> New -> Blueprint -> select this repo -> deploy
+services:
+  - type: web
+    name: devx-core-music
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      # pehli baar login ke BAAD isme session string daalna
+      # (bot /login ke baad khud bhej dega)
+      - key: SESSION_STRING
+        sync: false
+      - key: SPOTIFY_CLIENT_ID
+        sync: false
+      - key: SPOTIFY_CLIENT_SECRET
+        sync: false
+      # free tier sleep block — bot khud ko ping karta rahega
+      - key: KEEP_ALIVE
+        value: "1"

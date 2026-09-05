@@ -1,0 +1,7 @@
+# 𝐃𝐄𝐕 𝐗 𝐂𝐎𝐑𝐄 v6 — pinned combo (verified)
+pyrogram==2.0.106
+py-tgcalls[pyrogram]==2.2.5
+yt-dlp
+aiohttp
+Pillow
+gTTS

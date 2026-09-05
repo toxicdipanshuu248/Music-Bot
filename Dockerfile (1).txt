@@ -1,0 +1,19 @@
+# 𝐃𝐄𝐕 𝐗 𝐂𝐎𝐑𝐄 v6 — Render.com / any Docker host
+FROM python:3.11-slim
+
+# ffmpeg is REQUIRED for music playback + GIF banner conversion
+RUN apt-get update && apt-get install -y --no-install-recommends ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Render provides PORT automatically; default 8080 for local runs
+ENV PYTHONUNBUFFERED=1
+EXPOSE 8080
+
+CMD ["python", "music.py"]
